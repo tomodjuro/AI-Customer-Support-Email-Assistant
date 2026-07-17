@@ -80,6 +80,7 @@ def send_email(to_email, subject, body):
         print(f"❌ Pogreška pri slanju e-maila: {e}")
 
 # ==================== GLAVNI PROCES ====================
+# ==================== GLAVNI PROCES ====================
 if __name__ == "__main__":
     # 1. Pokreni AI analizu
     ai_output = analyze_and_respond_to_email(incoming_email)
@@ -87,13 +88,20 @@ if __name__ == "__main__":
     print(ai_output)
     print("---------------------------\n")
     
-    # 2. Parsiranje odgovora (izvlačimo samo tekst odgovora za slanje)
-    # Za potrebe brzog projekta, uzet ćemo sve nakon oznake "ODGOVOR:"
+    # 2. Parsiranje odgovora (izvlačimo samo tekst odgovora)
     if "ODGOVOR:" in ai_output:
-        email_body = ai_output.split("ODGOVOR:")[1].strip()
+        ai_response_body = ai_output.split("ODGOVOR:")[1].strip()
         
-        # 3. Pošalji e-mail (Za test upiši svoj e-mail da vidiš kako stiže!)
+        # 3. SPAJANJE ODGOVORA I ORIGINALNE PORUKE
+        # Dodajemo vizualnu liniju i tekst originalne poruke na dno
+        full_email_body = f"""{ai_response_body}
+
+--------------------------------------------------
+Vaš izvorni upit:
+{incoming_email.strip()}"""
+        
+        # 4. Pošalji e-mail (sada šaljemo 'full_email_body')
         test_recipient = SENDER_EMAIL 
-        send_email(test_recipient, "Re: Podrška - Tehnički problem", email_body)
+        send_email(test_recipient, "Re: Podrška - Tehnički problem", full_email_body)
     else:
         print("Format odgovora nije ispravan.")
