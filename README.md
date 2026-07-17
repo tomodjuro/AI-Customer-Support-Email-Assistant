@@ -9,6 +9,7 @@ Projekt je razvijen s naglaskom na sigurnost (skrivanje API ključeva) i priprem
 - **LLM Analiza (NLP):** Integracija s Hugging Face API-jem za naprednu analizu teksta.
 - **Sentiment & Kategorizacija:** Automatsko prepoznavanje tona korisnika (Pozitivan/Neutralan/Negativan) i tipa upita (Tehnički problem, račun, pohvala).
 - **Automatsko slanje:** Generiranje profesionalnog odgovora i slanje korisniku u realnom vremenu preko zaštićenog SMTP klijenta (Google App Passwords).
+- **Implementiran bazični Email Threading sustav:** Zadržava se kontekst razgovora tako da na dno generiranog e-maila automatski dodaje izvornu poruku korisnika
 - **Sigurnost na prvom mjestu:** Korištenje `.env` okolišnih varijabli za potpunu izolaciju osjetljivih podataka od Git repozitorija.
 
 ##  Tehnologije
