@@ -16,3 +16,14 @@ Projekt je razvijen s naglaskom na sigurnost (skrivanje API ključeva) i priprem
 - **AI Integracija:** `huggingface_hub` (Inference API)
 - **Model:** Meta Llama-3.3-70B-Instruct
 - **Automatizacija & Protokoli:** `smtplib`, `email.mime`, `python-dotenv`
+
+
+🚀 Plan za produkciju i skaliranje (Production Roadmap)
+
+Ovaj MVP (Minimum Viable Product) razvijen je kao dokaz koncepta u roku od jednog dana. U produkcijskom okruženju, sustav bi se nadogradio na sljedeći način:
+
+   - IMAP Integracija: Umjesto simuliranog stringa, uvođenje imaplib biblioteke za aktivno slušanje i povlačenje nepročitanih e-mailova s poslužitelja u realnom vremenu (Webhook / Cron job).
+
+   - Baza podataka (SQL/DevOps): Integracija s PostgreSQL/SQLite bazom za logiranje svakog upita, prepoznatog tona i generiranog odgovora. Ovo omogućuje analitiku, QA praćenje i analizu "halucinacija" AI modela.
+
+   - Asinkroni procesi: Prelazak na asinkrono izvršavanje (asyncio / Celery) kako bi sustav mogao paralelno obrađivati stotine zahtjeva bez blokiranja niti.
