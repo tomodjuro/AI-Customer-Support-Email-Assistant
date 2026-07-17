@@ -2,7 +2,6 @@ import os
 import smtplib
 from email.mime.text import MIMEText
 from email.mime.multipart import MIMEMultipart
-# Uvozimo Hugging Face klijent
 from huggingface_hub import InferenceClient
 from dotenv import load_dotenv
 
@@ -80,7 +79,7 @@ def send_email(to_email, subject, body):
         print(f"❌ Pogreška pri slanju e-maila: {e}")
 
 # ==================== GLAVNI PROCES ====================
-# ==================== GLAVNI PROCES ====================
+
 if __name__ == "__main__":
     # 1. Pokreni AI analizu
     ai_output = analyze_and_respond_to_email(incoming_email)
