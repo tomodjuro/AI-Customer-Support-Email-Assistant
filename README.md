@@ -21,7 +21,7 @@ Projekt je razvijen s naglaskom na sigurnost (skrivanje API ključeva) i priprem
 
 ## Plan za produkciju i skaliranje (Production Roadmap)
 
-Ovaj MVP (Minimum Viable Product) razvijen je kao dokaz koncepta u roku od jednog dana. U produkcijskom okruženju, sustav bi se nadogradio na sljedeći način:
+U produkcijskom okruženju, sustav bi se nadogradio na sljedeći način:
 
    - IMAP Integracija: Umjesto simuliranog stringa, uvođenje imaplib biblioteke za aktivno slušanje i povlačenje nepročitanih e-mailova s poslužitelja u realnom vremenu (Webhook / Cron job).
 
